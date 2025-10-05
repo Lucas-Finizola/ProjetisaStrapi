@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_sections_process_sections",
+  "info": {
+    "displayName": "Process Section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "steps": {
+      "type": "component",
+      "component": "elements.process-step",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

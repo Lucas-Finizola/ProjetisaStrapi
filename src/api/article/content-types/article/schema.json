@@ -4,7 +4,7 @@
   "info": {
     "singularName": "article",
     "pluralName": "articles",
-    "displayName": "article"
+    "displayName": "Article"
   },
   "options": {
     "draftAndPublish": true
@@ -19,18 +19,12 @@
       "type": "uid",
       "targetField": "title"
     },
-    "excerpt": {
-      "type": "string",
-      "required": true
-    },
-    "content": {
-      "type": "blocks",
-      "required": true
+    "summary": {
+      "type": "text"
     },
     "coverImage": {
       "type": "media",
       "multiple": false,
-      "required": true,
       "allowedTypes": [
         "images",
         "files",
@@ -38,16 +32,12 @@
         "audios"
       ]
     },
-    "author": {
-      "type": "string",
-      "default": "Equipe Projetisa"
-    },
-    "publishedDate": {
-      "type": "datetime"
-    },
-    "featured": {
-      "type": "boolean",
-      "default": false
+    "contentBlocks": {
+      "type": "dynamiczone",
+      "components": [
+        "content-sections.text-block",
+        "content-sections.image-block"
+      ]
     }
   }
 }

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_sections_final_ctas",
+  "info": {
+    "displayName": "Final CTA"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "buttonText": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

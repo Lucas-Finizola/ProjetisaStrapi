@@ -34,6 +34,11 @@
     },
     "formButtonText": {
       "type": "string"
+    },
+    "checklistItems": {
+      "type": "component",
+      "component": "elements.checklist-item",
+      "repeatable": true
     }
   },
   "config": {}

@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_sections_urgency_banners",
+  "info": {
+    "displayName": "Urgency Banner",
+    "icon": "bell"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "buttonText": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

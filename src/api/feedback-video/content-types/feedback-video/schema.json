@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "feedback_videos",
+  "info": {
+    "singularName": "feedback-video",
+    "pluralName": "feedback-videos",
+    "displayName": " Feedback Video"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "clientName": {
+      "type": "string",
+      "required": true
+    },
+    "videoUrl": {
+      "type": "string"
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_sections_location_grids",
+  "info": {
+    "displayName": " Location Grid"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Nossas Localizações"
+    },
+    "description": {
+      "type": "string"
+    },
+    "location": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::location.location"
+    }
+  },
+  "config": {}
+}

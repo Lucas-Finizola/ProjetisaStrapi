@@ -1,0 +1,4506 @@
+ESTRUTURA DE PASTAS:
+
+backend
+├── .env
+├── .env.example
+├── .gitignore
+├── .strapi
+│   └── client
+│       ├── app.js
+│       └── index.html
+├── .strapi-updater.json
+├── .tmp
+│   └── data.db
+├── config
+│   ├── admin.ts
+│   ├── api.ts
+│   ├── database.ts
+│   ├── middlewares.ts
+│   ├── plugins.ts
+│   └── server.ts
+├── database
+│   └── migrations
+│       └── .gitkeep
+├── dist
+│   ├── config
+│   │   ├── admin.js
+│   │   ├── api.js
+│   │   ├── database.js
+│   │   ├── middlewares.js
+│   │   ├── plugins.js
+│   │   └── server.js
+│   ├── src
+│   │   ├── api
+│   │   │   ├── article
+│   │   │   │   ├── content-types
+│   │   │   │   │   └── article
+│   │   │   │   │       └── schema.json
+│   │   │   │   ├── controllers
+│   │   │   │   │   └── article.js
+│   │   │   │   ├── routes
+│   │   │   │   │   └── article.js
+│   │   │   │   └── services
+│   │   │   │       └── article.js
+│   │   │   ├── faq
+│   │   │   │   ├── content-types
+│   │   │   │   │   └── faq
+│   │   │   │   │       └── schema.json
+│   │   │   │   ├── controllers
+│   │   │   │   │   └── faq.js
+│   │   │   │   ├── routes
+│   │   │   │   │   └── faq.js
+│   │   │   │   └── services
+│   │   │   │       └── faq.js
+│   │   │   ├── feedback-video
+│   │   │   │   ├── content-types
+│   │   │   │   │   └── feedback-video
+│   │   │   │   │       └── schema.json
+│   │   │   │   ├── controllers
+│   │   │   │   │   └── feedback-video.js
+│   │   │   │   ├── routes
+│   │   │   │   │   └── feedback-video.js
+│   │   │   │   └── services
+│   │   │   │       └── feedback-video.js
+│   │   │   ├── home
+│   │   │   │   ├── content-types
+│   │   │   │   │   └── home
+│   │   │   │   │       └── schema.json
+│   │   │   │   ├── controllers
+│   │   │   │   │   └── home.js
+│   │   │   │   ├── routes
+│   │   │   │   │   └── home.js
+│   │   │   │   └── services
+│   │   │   │       └── home.js
+│   │   │   ├── location
+│   │   │   │   ├── content-types
+│   │   │   │   │   └── location
+│   │   │   │   │       └── schema.json
+│   │   │   │   ├── controllers
+│   │   │   │   │   └── location.js
+│   │   │   │   ├── routes
+│   │   │   │   │   └── location.js
+│   │   │   │   └── services
+│   │   │   │       └── location.js
+│   │   │   ├── project
+│   │   │   │   ├── content-types
+│   │   │   │   │   └── project
+│   │   │   │   │       └── schema.json
+│   │   │   │   ├── controllers
+│   │   │   │   │   └── project.js
+│   │   │   │   ├── routes
+│   │   │   │   │   └── project.js
+│   │   │   │   └── services
+│   │   │   │       └── project.js
+│   │   │   ├── service
+│   │   │   │   ├── content-types
+│   │   │   │   │   └── service
+│   │   │   │   │       └── schema.json
+│   │   │   │   ├── controllers
+│   │   │   │   │   └── service.js
+│   │   │   │   ├── routes
+│   │   │   │   │   └── service.js
+│   │   │   │   └── services
+│   │   │   │       └── service.js
+│   │   │   └── team-member
+│   │   │       ├── content-types
+│   │   │       │   └── team-member
+│   │   │       │       └── schema.json
+│   │   │       ├── controllers
+│   │   │       │   └── team-member.js
+│   │   │       ├── routes
+│   │   │       │   └── team-member.js
+│   │   │       └── services
+│   │   │           └── team-member.js
+│   │   ├── components
+│   │   │   ├── content-sections
+│   │   │   │   ├── image-block.json
+│   │   │   │   └── text-block.json
+│   │   │   ├── elements
+│   │   │   │   ├── benefit-item.json
+│   │   │   │   ├── checklist-item.json
+│   │   │   │   └── process-step.json
+│   │   │   └── sections
+│   │   │       ├── benefits-section.json
+│   │   │       ├── faq-section.json
+│   │   │       ├── final-cta.json
+│   │   │       ├── hero-section.json
+│   │   │       ├── location-grid.json
+│   │   │       ├── other-services.json
+│   │   │       ├── process-section.json
+│   │   │       ├── team-grid.json
+│   │   │       ├── urgency-banner.json
+│   │   │       └── video-section.json
+│   │   └── index.js
+│   └── tsconfig.tsbuildinfo
+├── favicon.png
+├── package.json
+├── public
+│   ├── robots.txt
+│   └── uploads
+│       ├── .gitkeep
+│       ├── Inicial_d3c1340efd.jpg
+│       ├── large_Inicial_d3c1340efd.jpg
+│       ├── large_Montagem_de_Estrutura_de_Solo_para_Placas_Solares_2_958790ba9f_ac9c904d92.png
+│       ├── MARCA_PROJETISA_5861b27610.png
+│       ├── medium_Inicial_d3c1340efd.jpg
+│       ├── medium_Montagem_de_Estrutura_de_Solo_para_Placas_Solares_2_958790ba9f_ac9c904d92.png
+│       ├── Montagem_de_Estrutura_de_Solo_para_Placas_Solares_2_958790ba9f_ac9c904d92.png
+│       ├── small_Inicial_d3c1340efd.jpg
+│       ├── small_Montagem_de_Estrutura_de_Solo_para_Placas_Solares_2_958790ba9f_ac9c904d92.png
+│       ├── thumbnail_Inicial_d3c1340efd.jpg
+│       ├── thumbnail_MARCA_PROJETISA_5861b27610.png
+│       └── thumbnail_Montagem_de_Estrutura_de_Solo_para_Placas_Solares_2_958790ba9f_ac9c904d92.png
+├── README.md
+├── src
+│   ├── admin
+│   │   ├── app.example.tsx
+│   │   ├── tsconfig.json
+│   │   └── vite.config.example.ts
+│   ├── api
+│   │   ├── .gitkeep
+│   │   ├── article
+│   │   │   ├── content-types
+│   │   │   │   └── article
+│   │   │   │       └── schema.json
+│   │   │   ├── controllers
+│   │   │   │   └── article.ts
+│   │   │   ├── routes
+│   │   │   │   └── article.ts
+│   │   │   └── services
+│   │   │       └── article.ts
+│   │   ├── faq
+│   │   │   ├── content-types
+│   │   │   │   └── faq
+│   │   │   │       └── schema.json
+│   │   │   ├── controllers
+│   │   │   │   └── faq.ts
+│   │   │   ├── routes
+│   │   │   │   └── faq.ts
+│   │   │   └── services
+│   │   │       └── faq.ts
+│   │   ├── feedback-video
+│   │   │   ├── content-types
+│   │   │   │   └── feedback-video
+│   │   │   │       └── schema.json
+│   │   │   ├── controllers
+│   │   │   │   └── feedback-video.ts
+│   │   │   ├── routes
+│   │   │   │   └── feedback-video.ts
+│   │   │   └── services
+│   │   │       └── feedback-video.ts
+│   │   ├── home
+│   │   │   ├── content-types
+│   │   │   │   └── home
+│   │   │   │       └── schema.json
+│   │   │   ├── controllers
+│   │   │   │   └── home.ts
+│   │   │   ├── routes
+│   │   │   │   └── home.ts
+│   │   │   └── services
+│   │   │       └── home.ts
+│   │   ├── location
+│   │   │   ├── content-types
+│   │   │   │   └── location
+│   │   │   │       └── schema.json
+│   │   │   ├── controllers
+│   │   │   │   └── location.ts
+│   │   │   ├── routes
+│   │   │   │   └── location.ts
+│   │   │   └── services
+│   │   │       └── location.ts
+│   │   ├── project
+│   │   │   ├── content-types
+│   │   │   │   └── project
+│   │   │   │       └── schema.json
+│   │   │   ├── controllers
+│   │   │   │   └── project.ts
+│   │   │   ├── routes
+│   │   │   │   └── project.ts
+│   │   │   └── services
+│   │   │       └── project.ts
+│   │   ├── service
+│   │   │   ├── content-types
+│   │   │   │   └── service
+│   │   │   │       └── schema.json
+│   │   │   ├── controllers
+│   │   │   │   └── service.ts
+│   │   │   ├── routes
+│   │   │   │   └── service.ts
+│   │   │   └── services
+│   │   │       └── service.ts
+│   │   └── team-member
+│   │       ├── content-types
+│   │       │   └── team-member
+│   │       │       └── schema.json
+│   │       ├── controllers
+│   │       │   └── team-member.ts
+│   │       ├── routes
+│   │       │   └── team-member.ts
+│   │       └── services
+│   │           └── team-member.ts
+│   ├── components
+│   │   ├── content-sections
+│   │   │   ├── image-block.json
+│   │   │   └── text-block.json
+│   │   ├── elements
+│   │   │   ├── benefit-item.json
+│   │   │   ├── checklist-item.json
+│   │   │   └── process-step.json
+│   │   └── sections
+│   │       ├── benefits-section.json
+│   │       ├── faq-section.json
+│   │       ├── final-cta.json
+│   │       ├── hero-section.json
+│   │       ├── location-grid.json
+│   │       ├── other-services.json
+│   │       ├── process-section.json
+│   │       ├── team-grid.json
+│   │       ├── urgency-banner.json
+│   │       └── video-section.json
+│   ├── extensions
+│   │   └── .gitkeep
+│   └── index.ts
+├── tsconfig.json
+└── types
+    └── generated
+        ├── components.d.ts
+        └── contentTypes.d.ts
+
+
+CONTEÚDO DOS ARQUIVOS:
+
+--- INÍCIO DO ARQUIVO: .strapi\client\app.js ---
+
+/**
+ * This file was automatically generated by Strapi.
+ * Any modifications made will be discarded.
+ */
+import strapiCloud from "@strapi/plugin-cloud/strapi-admin";
+import usersPermissions from "@strapi/plugin-users-permissions/strapi-admin";
+import { renderAdmin } from "@strapi/strapi/admin";
+
+renderAdmin(document.getElementById("strapi"), {
+  plugins: {
+    "strapi-cloud": strapiCloud,
+    "users-permissions": usersPermissions,
+  },
+});
+
+
+--- FIM DO ARQUIVO: .strapi\client\app.js ---
+
+--- INÍCIO DO ARQUIVO: .strapi-updater.json ---
+
+{
+	"latest": "5.25.0",
+	"lastUpdateCheck": 1759686224589
+}
+
+--- FIM DO ARQUIVO: .strapi-updater.json ---
+
+--- INÍCIO DO ARQUIVO: config\admin.ts ---
+
+export default ({ env }) => ({
+  auth: {
+    secret: env('ADMIN_JWT_SECRET'),
+  },
+  apiToken: {
+    salt: env('API_TOKEN_SALT'),
+  },
+  transfer: {
+    token: {
+      salt: env('TRANSFER_TOKEN_SALT'),
+    },
+  },
+  secrets: {
+    encryptionKey: env('ENCRYPTION_KEY'),
+  },
+  flags: {
+    nps: env.bool('FLAG_NPS', true),
+    promoteEE: env.bool('FLAG_PROMOTE_EE', true),
+  },
+});
+
+
+--- FIM DO ARQUIVO: config\admin.ts ---
+
+--- INÍCIO DO ARQUIVO: config\api.ts ---
+
+export default {
+  rest: {
+    defaultLimit: 25,
+    maxLimit: 100,
+    withCount: true,
+  },
+};
+
+
+--- FIM DO ARQUIVO: config\api.ts ---
+
+--- INÍCIO DO ARQUIVO: config\database.ts ---
+
+import path from 'path';
+
+export default ({ env }) => {
+  const client = env('DATABASE_CLIENT', 'sqlite');
+
+  const connections = {
+    mysql: {
+      connection: {
+        host: env('DATABASE_HOST', 'localhost'),
+        port: env.int('DATABASE_PORT', 3306),
+        database: env('DATABASE_NAME', 'strapi'),
+        user: env('DATABASE_USERNAME', 'strapi'),
+        password: env('DATABASE_PASSWORD', 'strapi'),
+        ssl: env.bool('DATABASE_SSL', false) && {
+          key: env('DATABASE_SSL_KEY', undefined),
+          cert: env('DATABASE_SSL_CERT', undefined),
+          ca: env('DATABASE_SSL_CA', undefined),
+          capath: env('DATABASE_SSL_CAPATH', undefined),
+          cipher: env('DATABASE_SSL_CIPHER', undefined),
+          rejectUnauthorized: env.bool('DATABASE_SSL_REJECT_UNAUTHORIZED', true),
+        },
+      },
+      pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) },
+    },
+    postgres: {
+      connection: {
+        connectionString: env('DATABASE_URL'),
+        host: env('DATABASE_HOST', 'localhost'),
+        port: env.int('DATABASE_PORT', 5432),
+        database: env('DATABASE_NAME', 'strapi'),
+        user: env('DATABASE_USERNAME', 'strapi'),
+        password: env('DATABASE_PASSWORD', 'strapi'),
+        ssl: env.bool('DATABASE_SSL', false) && {
+          key: env('DATABASE_SSL_KEY', undefined),
+          cert: env('DATABASE_SSL_CERT', undefined),
+          ca: env('DATABASE_SSL_CA', undefined),
+          capath: env('DATABASE_SSL_CAPATH', undefined),
+          cipher: env('DATABASE_SSL_CIPHER', undefined),
+          rejectUnauthorized: env.bool('DATABASE_SSL_REJECT_UNAUTHORIZED', true),
+        },
+        schema: env('DATABASE_SCHEMA', 'public'),
+      },
+      pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) },
+    },
+    sqlite: {
+      connection: {
+        filename: path.join(__dirname, '..', '..', env('DATABASE_FILENAME', '.tmp/data.db')),
+      },
+      useNullAsDefault: true,
+    },
+  };
+
+  return {
+    connection: {
+      client,
+      ...connections[client],
+      acquireConnectionTimeout: env.int('DATABASE_CONNECTION_TIMEOUT', 60000),
+    },
+  };
+};
+
+
+--- FIM DO ARQUIVO: config\database.ts ---
+
+--- INÍCIO DO ARQUIVO: config\middlewares.ts ---
+
+export default [
+  'strapi::logger',
+  'strapi::errors',
+  'strapi::security',
+  'strapi::cors',
+  'strapi::poweredBy',
+  'strapi::query',
+  'strapi::body',
+  'strapi::session',
+  'strapi::favicon',
+  'strapi::public',
+];
+
+
+--- FIM DO ARQUIVO: config\middlewares.ts ---
+
+--- INÍCIO DO ARQUIVO: config\plugins.ts ---
+
+export default () => ({});
+
+
+--- FIM DO ARQUIVO: config\plugins.ts ---
+
+--- INÍCIO DO ARQUIVO: config\server.ts ---
+
+export default ({ env }) => ({
+  host: env('HOST', '0.0.0.0'),
+  port: env.int('PORT', 1337),
+  app: {
+    keys: env.array('APP_KEYS'),
+  },
+});
+
+
+--- FIM DO ARQUIVO: config\server.ts ---
+
+--- INÍCIO DO ARQUIVO: dist\config\admin.js ---
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = ({ env }) => ({
+    auth: {
+        secret: env('ADMIN_JWT_SECRET'),
+    },
+    apiToken: {
+        salt: env('API_TOKEN_SALT'),
+    },
+    transfer: {
+        token: {
+            salt: env('TRANSFER_TOKEN_SALT'),
+        },
+    },
+    secrets: {
+        encryptionKey: env('ENCRYPTION_KEY'),
+    },
+    flags: {
+        nps: env.bool('FLAG_NPS', true),
+        promoteEE: env.bool('FLAG_PROMOTE_EE', true),
+    },
+});
+
+
+--- FIM DO ARQUIVO: dist\config\admin.js ---
+
+--- INÍCIO DO ARQUIVO: dist\config\api.js ---
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = {
+    rest: {
+        defaultLimit: 25,
+        maxLimit: 100,
+        withCount: true,
+    },
+};
+
+
+--- FIM DO ARQUIVO: dist\config\api.js ---
+
+--- INÍCIO DO ARQUIVO: dist\config\database.js ---
+
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const path_1 = __importDefault(require("path"));
+exports.default = ({ env }) => {
+    const client = env('DATABASE_CLIENT', 'sqlite');
+    const connections = {
+        mysql: {
+            connection: {
+                host: env('DATABASE_HOST', 'localhost'),
+                port: env.int('DATABASE_PORT', 3306),
+                database: env('DATABASE_NAME', 'strapi'),
+                user: env('DATABASE_USERNAME', 'strapi'),
+                password: env('DATABASE_PASSWORD', 'strapi'),
+                ssl: env.bool('DATABASE_SSL', false) && {
+                    key: env('DATABASE_SSL_KEY', undefined),
+                    cert: env('DATABASE_SSL_CERT', undefined),
+                    ca: env('DATABASE_SSL_CA', undefined),
+                    capath: env('DATABASE_SSL_CAPATH', undefined),
+                    cipher: env('DATABASE_SSL_CIPHER', undefined),
+                    rejectUnauthorized: env.bool('DATABASE_SSL_REJECT_UNAUTHORIZED', true),
+                },
+            },
+            pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) },
+        },
+        postgres: {
+            connection: {
+                connectionString: env('DATABASE_URL'),
+                host: env('DATABASE_HOST', 'localhost'),
+                port: env.int('DATABASE_PORT', 5432),
+                database: env('DATABASE_NAME', 'strapi'),
+                user: env('DATABASE_USERNAME', 'strapi'),
+                password: env('DATABASE_PASSWORD', 'strapi'),
+                ssl: env.bool('DATABASE_SSL', false) && {
+                    key: env('DATABASE_SSL_KEY', undefined),
+                    cert: env('DATABASE_SSL_CERT', undefined),
+                    ca: env('DATABASE_SSL_CA', undefined),
+                    capath: env('DATABASE_SSL_CAPATH', undefined),
+                    cipher: env('DATABASE_SSL_CIPHER', undefined),
+                    rejectUnauthorized: env.bool('DATABASE_SSL_REJECT_UNAUTHORIZED', true),
+                },
+                schema: env('DATABASE_SCHEMA', 'public'),
+            },
+            pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) },
+        },
+        sqlite: {
+            connection: {
+                filename: path_1.default.join(__dirname, '..', '..', env('DATABASE_FILENAME', '.tmp/data.db')),
+            },
+            useNullAsDefault: true,
+        },
+    };
+    return {
+        connection: {
+            client,
+            ...connections[client],
+            acquireConnectionTimeout: env.int('DATABASE_CONNECTION_TIMEOUT', 60000),
+        },
+    };
+};
+
+
+--- FIM DO ARQUIVO: dist\config\database.js ---
+
+--- INÍCIO DO ARQUIVO: dist\config\middlewares.js ---
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = [
+    'strapi::logger',
+    'strapi::errors',
+    'strapi::security',
+    'strapi::cors',
+    'strapi::poweredBy',
+    'strapi::query',
+    'strapi::body',
+    'strapi::session',
+    'strapi::favicon',
+    'strapi::public',
+];
+
+
+--- FIM DO ARQUIVO: dist\config\middlewares.js ---
+
+--- INÍCIO DO ARQUIVO: dist\config\plugins.js ---
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = () => ({});
+
+
+--- FIM DO ARQUIVO: dist\config\plugins.js ---
+
+--- INÍCIO DO ARQUIVO: dist\config\server.js ---
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = ({ env }) => ({
+    host: env('HOST', '0.0.0.0'),
+    port: env.int('PORT', 1337),
+    app: {
+        keys: env.array('APP_KEYS'),
+    },
+});
+
+
+--- FIM DO ARQUIVO: dist\config\server.js ---
+
+--- INÍCIO DO ARQUIVO: dist\src\api\article\content-types\article\schema.json ---
+
+{
+    "kind": "collectionType",
+    "collectionName": "articles",
+    "info": {
+        "singularName": "article",
+        "pluralName": "articles",
+        "displayName": "Article"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "title": {
+            "type": "string",
+            "required": true
+        },
+        "slug": {
+            "type": "uid",
+            "targetField": "title"
+        },
+        "summary": {
+            "type": "text"
+        },
+        "coverImage": {
+            "type": "media",
+            "multiple": false,
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ]
+        },
+        "contentBlocks": {
+            "type": "dynamiczone",
+            "components": [
+                "content-sections.text-block",
+                "content-sections.image-block"
+            ]
+        }
+    }
+}
+
+
+--- FIM DO ARQUIVO: dist\src\api\article\content-types\article\schema.json ---
+
+--- INÍCIO DO ARQUIVO: dist\src\api\article\controllers\article.js ---
+
+"use strict";
+/**
+ * article controller
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+const strapi_1 = require("@strapi/strapi");
+exports.default = strapi_1.factories.createCoreController('api::article.article');
+
+
+--- FIM DO ARQUIVO: dist\src\api\article\controllers\article.js ---
+
+--- INÍCIO DO ARQUIVO: dist\src\api\article\routes\article.js ---
+
+"use strict";
+/**
+ * article router
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+const strapi_1 = require("@strapi/strapi");
+exports.default = strapi_1.factories.createCoreRouter('api::article.article');
+
+
+--- FIM DO ARQUIVO: dist\src\api\article\routes\article.js ---
+
+--- INÍCIO DO ARQUIVO: dist\src\api\article\services\article.js ---
+
+"use strict";
+/**
+ * article service
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+const strapi_1 = require("@strapi/strapi");
+exports.default = strapi_1.factories.createCoreService('api::article.article');
+
+
+--- FIM DO ARQUIVO: dist\src\api\article\services\article.js ---
+
+--- INÍCIO DO ARQUIVO: dist\src\api\faq\content-types\faq\schema.json ---
+
+{
+    "kind": "collectionType",
+    "collectionName": "faqs",
+    "info": {
+        "singularName": "faq",
+        "pluralName": "faqs",
+        "displayName": "FAQ"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "question": {
+            "type": "string",
+            "required": true
+        },
+        "answer": {
+            "type": "blocks",
+            "required": true
+        },
+        "category": {
+            "type": "string"
+        },
+        "order": {
+            "type": "integer"
+        }
+    }
+}
+
+
+--- FIM DO ARQUIVO: dist\src\api\faq\content-types\faq\schema.json ---
+
+--- INÍCIO DO ARQUIVO: dist\src\api\faq\controllers\faq.js ---
+
+"use strict";
+/**
+ * faq controller
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+const strapi_1 = require("@strapi/strapi");
+exports.default = strapi_1.factories.createCoreController('api::faq.faq');
+
+
+--- FIM DO ARQUIVO: dist\src\api\faq\controllers\faq.js ---
+
+--- INÍCIO DO ARQUIVO: dist\src\api\faq\routes\faq.js ---
+
+"use strict";
+/**
+ * faq router
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+const strapi_1 = require("@strapi/strapi");
+exports.default = strapi_1.factories.createCoreRouter('api::faq.faq');
+
+
+--- FIM DO ARQUIVO: dist\src\api\faq\routes\faq.js ---
+
+--- INÍCIO DO ARQUIVO: dist\src\api\faq\services\faq.js ---
+
+"use strict";
+/**
+ * faq service
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+const strapi_1 = require("@strapi/strapi");
+exports.default = strapi_1.factories.createCoreService('api::faq.faq');
+
+
+--- FIM DO ARQUIVO: dist\src\api\faq\services\faq.js ---
+
+--- INÍCIO DO ARQUIVO: dist\src\api\feedback-video\content-types\feedback-video\schema.json ---
+
+{
+    "kind": "collectionType",
+    "collectionName": "feedback_videos",
+    "info": {
+        "singularName": "feedback-video",
+        "pluralName": "feedback-videos",
+        "displayName": " Feedback Video"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "title": {
+            "type": "string",
+            "required": true
+        },
+        "clientName": {
+            "type": "string",
+            "required": true
+        },
+        "videoUrl": {
+            "type": "string"
+        },
+        "thumbnail": {
+            "type": "media",
+            "multiple": false,
+            "required": false,
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ]
+        },
+        "description": {
+            "type": "string"
+        },
+        "featured": {
+            "type": "boolean",
+            "default": false
+        },
+        "videoFile": {
+            "type": "media",
+            "multiple": false,
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ]
+        }
+    }
+}
+
+
+--- FIM DO ARQUIVO: dist\src\api\feedback-video\content-types\feedback-video\schema.json ---
+
+--- INÍCIO DO ARQUIVO: dist\src\api\feedback-video\controllers\feedback-video.js ---
+
+"use strict";
+/**
+ * feedback-video controller
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+const strapi_1 = require("@strapi/strapi");
+exports.default = strapi_1.factories.createCoreController('api::feedback-video.feedback-video');
+
+
+--- FIM DO ARQUIVO: dist\src\api\feedback-video\controllers\feedback-video.js ---
+
+--- INÍCIO DO ARQUIVO: dist\src\api\feedback-video\routes\feedback-video.js ---
+
+"use strict";
+/**
+ * feedback-video router
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+const strapi_1 = require("@strapi/strapi");
+exports.default = strapi_1.factories.createCoreRouter('api::feedback-video.feedback-video');
+
+
+--- FIM DO ARQUIVO: dist\src\api\feedback-video\routes\feedback-video.js ---
+
+--- INÍCIO DO ARQUIVO: dist\src\api\feedback-video\services\feedback-video.js ---
+
+"use strict";
+/**
+ * feedback-video service
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+const strapi_1 = require("@strapi/strapi");
+exports.default = strapi_1.factories.createCoreService('api::feedback-video.feedback-video');
+
+
+--- FIM DO ARQUIVO: dist\src\api\feedback-video\services\feedback-video.js ---
+
+--- INÍCIO DO ARQUIVO: dist\src\api\home\content-types\home\schema.json ---
+
+{
+    "kind": "singleType",
+    "collectionName": "homes",
+    "info": {
+        "singularName": "home",
+        "pluralName": "homes",
+        "displayName": "home"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "title": {
+            "type": "string"
+        },
+        "subtitle": {
+            "type": "string"
+        },
+        "sections": {
+            "type": "dynamiczone",
+            "components": [
+                "sections.video-section",
+                "sections.urgency-banner",
+                "sections.team-grid",
+                "sections.process-section",
+                "sections.other-services",
+                "sections.hero-section",
+                "sections.faq-section",
+                "sections.benefits-section",
+                "sections.final-cta"
+            ]
+        },
+        "Blocks": {
+            "type": "component",
+            "component": "content-sections.text-block",
+            "repeatable": true
+        }
+    }
+}
+
+
+--- FIM DO ARQUIVO: dist\src\api\home\content-types\home\schema.json ---
+
+--- INÍCIO DO ARQUIVO: dist\src\api\home\controllers\home.js ---
+
+"use strict";
+/**
+ * home controller
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+const strapi_1 = require("@strapi/strapi");
+exports.default = strapi_1.factories.createCoreController('api::home.home');
+
+
+--- FIM DO ARQUIVO: dist\src\api\home\controllers\home.js ---
+
+--- INÍCIO DO ARQUIVO: dist\src\api\home\routes\home.js ---
+
+"use strict";
+/**
+ * home router
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+const strapi_1 = require("@strapi/strapi");
+exports.default = strapi_1.factories.createCoreRouter('api::home.home');
+
+
+--- FIM DO ARQUIVO: dist\src\api\home\routes\home.js ---
+
+--- INÍCIO DO ARQUIVO: dist\src\api\home\services\home.js ---
+
+"use strict";
+/**
+ * home service
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+const strapi_1 = require("@strapi/strapi");
+exports.default = strapi_1.factories.createCoreService('api::home.home');
+
+
+--- FIM DO ARQUIVO: dist\src\api\home\services\home.js ---
+
+--- INÍCIO DO ARQUIVO: dist\src\api\location\content-types\location\schema.json ---
+
+{
+    "kind": "collectionType",
+    "collectionName": "locations",
+    "info": {
+        "singularName": "location",
+        "pluralName": "locations",
+        "displayName": "Location"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "name": {
+            "type": "string",
+            "required": true
+        },
+        "subtitle": {
+            "type": "blocks"
+        },
+        "image": {
+            "type": "media",
+            "multiple": false,
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ]
+        }
+    }
+}
+
+
+--- FIM DO ARQUIVO: dist\src\api\location\content-types\location\schema.json ---
+
+--- INÍCIO DO ARQUIVO: dist\src\api\location\controllers\location.js ---
+
+"use strict";
+/**
+ * location controller
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+const strapi_1 = require("@strapi/strapi");
+exports.default = strapi_1.factories.createCoreController('api::location.location');
+
+
+--- FIM DO ARQUIVO: dist\src\api\location\controllers\location.js ---
+
+--- INÍCIO DO ARQUIVO: dist\src\api\location\routes\location.js ---
+
+"use strict";
+/**
+ * location router
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+const strapi_1 = require("@strapi/strapi");
+exports.default = strapi_1.factories.createCoreRouter('api::location.location');
+
+
+--- FIM DO ARQUIVO: dist\src\api\location\routes\location.js ---
+
+--- INÍCIO DO ARQUIVO: dist\src\api\location\services\location.js ---
+
+"use strict";
+/**
+ * location service
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+const strapi_1 = require("@strapi/strapi");
+exports.default = strapi_1.factories.createCoreService('api::location.location');
+
+
+--- FIM DO ARQUIVO: dist\src\api\location\services\location.js ---
+
+--- INÍCIO DO ARQUIVO: dist\src\api\project\content-types\project\schema.json ---
+
+{
+    "kind": "collectionType",
+    "collectionName": "projects",
+    "info": {
+        "singularName": "project",
+        "pluralName": "projects",
+        "displayName": "Project"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "title": {
+            "type": "string",
+            "required": true
+        },
+        "slug": {
+            "type": "uid",
+            "targetField": "title",
+            "required": true
+        },
+        "summary": {
+            "type": "text"
+        },
+        "coverImage": {
+            "type": "media",
+            "multiple": false,
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ]
+        },
+        "contentBlocks": {
+            "type": "dynamiczone",
+            "components": [
+                "content-sections.text-block",
+                "content-sections.image-block"
+            ]
+        }
+    }
+}
+
+
+--- FIM DO ARQUIVO: dist\src\api\project\content-types\project\schema.json ---
+
+--- INÍCIO DO ARQUIVO: dist\src\api\project\controllers\project.js ---
+
+"use strict";
+/**
+ * project controller
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+const strapi_1 = require("@strapi/strapi");
+exports.default = strapi_1.factories.createCoreController('api::project.project');
+
+
+--- FIM DO ARQUIVO: dist\src\api\project\controllers\project.js ---
+
+--- INÍCIO DO ARQUIVO: dist\src\api\project\routes\project.js ---
+
+"use strict";
+/**
+ * project router
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+const strapi_1 = require("@strapi/strapi");
+exports.default = strapi_1.factories.createCoreRouter('api::project.project');
+
+
+--- FIM DO ARQUIVO: dist\src\api\project\routes\project.js ---
+
+--- INÍCIO DO ARQUIVO: dist\src\api\project\services\project.js ---
+
+"use strict";
+/**
+ * project service
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+const strapi_1 = require("@strapi/strapi");
+exports.default = strapi_1.factories.createCoreService('api::project.project');
+
+
+--- FIM DO ARQUIVO: dist\src\api\project\services\project.js ---
+
+--- INÍCIO DO ARQUIVO: dist\src\api\service\content-types\service\schema.json ---
+
+{
+    "kind": "collectionType",
+    "collectionName": "services",
+    "info": {
+        "singularName": "service",
+        "pluralName": "services",
+        "displayName": "Service"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "title": {
+            "type": "string",
+            "required": true
+        },
+        "slug": {
+            "type": "uid",
+            "targetField": "title",
+            "required": true
+        },
+        "summary": {
+            "type": "text"
+        },
+        "icon": {
+            "type": "string"
+        },
+        "featuredImage": {
+            "type": "media",
+            "multiple": false,
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ]
+        },
+        "contentBlocks": {
+            "type": "dynamiczone",
+            "components": [
+                "content-sections.text-block",
+                "content-sections.image-block"
+            ]
+        }
+    }
+}
+
+
+--- FIM DO ARQUIVO: dist\src\api\service\content-types\service\schema.json ---
+
+--- INÍCIO DO ARQUIVO: dist\src\api\service\controllers\service.js ---
+
+"use strict";
+/**
+ * service controller
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+const strapi_1 = require("@strapi/strapi");
+exports.default = strapi_1.factories.createCoreController('api::service.service');
+
+
+--- FIM DO ARQUIVO: dist\src\api\service\controllers\service.js ---
+
+--- INÍCIO DO ARQUIVO: dist\src\api\service\routes\service.js ---
+
+"use strict";
+/**
+ * service router
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+const strapi_1 = require("@strapi/strapi");
+exports.default = strapi_1.factories.createCoreRouter('api::service.service');
+
+
+--- FIM DO ARQUIVO: dist\src\api\service\routes\service.js ---
+
+--- INÍCIO DO ARQUIVO: dist\src\api\service\services\service.js ---
+
+"use strict";
+/**
+ * service service
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+const strapi_1 = require("@strapi/strapi");
+exports.default = strapi_1.factories.createCoreService('api::service.service');
+
+
+--- FIM DO ARQUIVO: dist\src\api\service\services\service.js ---
+
+--- INÍCIO DO ARQUIVO: dist\src\api\team-member\content-types\team-member\schema.json ---
+
+{
+    "kind": "collectionType",
+    "collectionName": "team_members",
+    "info": {
+        "singularName": "team-member",
+        "pluralName": "team-members",
+        "displayName": "Team Member"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "name": {
+            "type": "string",
+            "required": true
+        },
+        "position": {
+            "type": "string",
+            "required": true
+        },
+        "bio": {
+            "type": "blocks"
+        },
+        "photo": {
+            "type": "media",
+            "multiple": false,
+            "required": true,
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ]
+        },
+        "email": {
+            "type": "email"
+        },
+        "phone": {
+            "type": "string"
+        },
+        "linkedin": {
+            "type": "string"
+        },
+        "order": {
+            "type": "integer"
+        }
+    }
+}
+
+
+--- FIM DO ARQUIVO: dist\src\api\team-member\content-types\team-member\schema.json ---
+
+--- INÍCIO DO ARQUIVO: dist\src\api\team-member\controllers\team-member.js ---
+
+"use strict";
+/**
+ * team-member controller
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+const strapi_1 = require("@strapi/strapi");
+exports.default = strapi_1.factories.createCoreController('api::team-member.team-member');
+
+
+--- FIM DO ARQUIVO: dist\src\api\team-member\controllers\team-member.js ---
+
+--- INÍCIO DO ARQUIVO: dist\src\api\team-member\routes\team-member.js ---
+
+"use strict";
+/**
+ * team-member router
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+const strapi_1 = require("@strapi/strapi");
+exports.default = strapi_1.factories.createCoreRouter('api::team-member.team-member');
+
+
+--- FIM DO ARQUIVO: dist\src\api\team-member\routes\team-member.js ---
+
+--- INÍCIO DO ARQUIVO: dist\src\api\team-member\services\team-member.js ---
+
+"use strict";
+/**
+ * team-member service
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+const strapi_1 = require("@strapi/strapi");
+exports.default = strapi_1.factories.createCoreService('api::team-member.team-member');
+
+
+--- FIM DO ARQUIVO: dist\src\api\team-member\services\team-member.js ---
+
+--- INÍCIO DO ARQUIVO: dist\src\components\content-sections\image-block.json ---
+
+{
+    "collectionName": "components_content_sections_image_blocks",
+    "info": {
+        "displayName": "Image Block"
+    },
+    "options": {},
+    "attributes": {
+        "image": {
+            "type": "media",
+            "multiple": false,
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ]
+        },
+        "caption": {
+            "type": "string"
+        }
+    },
+    "config": {}
+}
+
+
+--- FIM DO ARQUIVO: dist\src\components\content-sections\image-block.json ---
+
+--- INÍCIO DO ARQUIVO: dist\src\components\content-sections\text-block.json ---
+
+{
+    "collectionName": "components_content_sections_text_blocks",
+    "info": {
+        "displayName": "Text Block"
+    },
+    "options": {},
+    "attributes": {
+        "content": {
+            "type": "blocks"
+        }
+    },
+    "config": {}
+}
+
+
+--- FIM DO ARQUIVO: dist\src\components\content-sections\text-block.json ---
+
+--- INÍCIO DO ARQUIVO: dist\src\components\elements\benefit-item.json ---
+
+{
+    "collectionName": "components_elements_benefit_items",
+    "info": {
+        "displayName": "Benefit Item",
+        "icon": "star"
+    },
+    "options": {},
+    "attributes": {
+        "icon": {
+            "type": "string"
+        },
+        "title": {
+            "type": "string"
+        },
+        "description": {
+            "type": "text"
+        }
+    },
+    "config": {}
+}
+
+
+--- FIM DO ARQUIVO: dist\src\components\elements\benefit-item.json ---
+
+--- INÍCIO DO ARQUIVO: dist\src\components\elements\checklist-item.json ---
+
+{
+    "collectionName": "components_elements_checklist_items",
+    "info": {
+        "displayName": "Checklist Item",
+        "icon": "check"
+    },
+    "options": {},
+    "attributes": {
+        "text": {
+            "type": "string"
+        }
+    },
+    "config": {}
+}
+
+
+--- FIM DO ARQUIVO: dist\src\components\elements\checklist-item.json ---
+
+--- INÍCIO DO ARQUIVO: dist\src\components\elements\process-step.json ---
+
+{
+    "collectionName": "components_elements_process_steps",
+    "info": {
+        "displayName": "Process Step"
+    },
+    "options": {},
+    "attributes": {
+        "step": {
+            "type": "string"
+        },
+        "title": {
+            "type": "string"
+        },
+        "description": {
+            "type": "text"
+        }
+    },
+    "config": {}
+}
+
+
+--- FIM DO ARQUIVO: dist\src\components\elements\process-step.json ---
+
+--- INÍCIO DO ARQUIVO: dist\src\components\sections\benefits-section.json ---
+
+{
+    "collectionName": "components_sections_benefits_sections",
+    "info": {
+        "displayName": "Benefits Section",
+        "icon": "apps"
+    },
+    "options": {},
+    "attributes": {
+        "title": {
+            "type": "string"
+        },
+        "subtitle": {
+            "type": "string"
+        },
+        "benefits": {
+            "type": "component",
+            "component": "elements.benefit-item",
+            "repeatable": true
+        }
+    },
+    "config": {}
+}
+
+
+--- FIM DO ARQUIVO: dist\src\components\sections\benefits-section.json ---
+
+--- INÍCIO DO ARQUIVO: dist\src\components\sections\faq-section.json ---
+
+{
+    "collectionName": "components_sections_faq_sections",
+    "info": {
+        "displayName": "FaqSection"
+    },
+    "options": {},
+    "attributes": {},
+    "config": {}
+}
+
+
+--- FIM DO ARQUIVO: dist\src\components\sections\faq-section.json ---
+
+--- INÍCIO DO ARQUIVO: dist\src\components\sections\final-cta.json ---
+
+{
+    "collectionName": "components_sections_final_ctas",
+    "info": {
+        "displayName": "Final CTA"
+    },
+    "options": {},
+    "attributes": {
+        "title": {
+            "type": "string"
+        },
+        "subtitle": {
+            "type": "text"
+        },
+        "buttonText": {
+            "type": "string"
+        }
+    },
+    "config": {}
+}
+
+
+--- FIM DO ARQUIVO: dist\src\components\sections\final-cta.json ---
+
+--- INÍCIO DO ARQUIVO: dist\src\components\sections\hero-section.json ---
+
+{
+    "collectionName": "components_sections_hero_sections",
+    "info": {
+        "displayName": "Hero Section",
+        "icon": "layout"
+    },
+    "options": {},
+    "attributes": {
+        "title": {
+            "type": "string"
+        },
+        "subtitle": {
+            "type": "text"
+        },
+        "backgroundImage": {
+            "type": "media",
+            "multiple": false,
+            "required": true,
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ]
+        },
+        "primaryButtonText": {
+            "type": "string"
+        },
+        "primaryButtonLink": {
+            "type": "string"
+        },
+        "formTitle": {
+            "type": "string"
+        },
+        "formButtonText": {
+            "type": "string"
+        },
+        "checklistItems": {
+            "type": "component",
+            "component": "elements.checklist-item",
+            "repeatable": true
+        }
+    },
+    "config": {}
+}
+
+
+--- FIM DO ARQUIVO: dist\src\components\sections\hero-section.json ---
+
+--- INÍCIO DO ARQUIVO: dist\src\components\sections\location-grid.json ---
+
+{
+    "collectionName": "components_sections_location_grids",
+    "info": {
+        "displayName": " Location Grid"
+    },
+    "options": {},
+    "attributes": {
+        "title": {
+            "type": "string",
+            "default": "Nossas Localizações"
+        },
+        "description": {
+            "type": "string"
+        },
+        "location": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::location.location"
+        }
+    },
+    "config": {}
+}
+
+
+--- FIM DO ARQUIVO: dist\src\components\sections\location-grid.json ---
+
+--- INÍCIO DO ARQUIVO: dist\src\components\sections\other-services.json ---
+
+{
+    "collectionName": "components_sections_other_services",
+    "info": {
+        "displayName": "OtherServices"
+    },
+    "options": {},
+    "attributes": {},
+    "config": {}
+}
+
+
+--- FIM DO ARQUIVO: dist\src\components\sections\other-services.json ---
+
+--- INÍCIO DO ARQUIVO: dist\src\components\sections\process-section.json ---
+
+{
+    "collectionName": "components_sections_process_sections",
+    "info": {
+        "displayName": "Process Section"
+    },
+    "options": {},
+    "attributes": {
+        "title": {
+            "type": "string"
+        },
+        "subtitle": {
+            "type": "text"
+        },
+        "steps": {
+            "type": "component",
+            "component": "elements.process-step",
+            "repeatable": true
+        }
+    },
+    "config": {}
+}
+
+
+--- FIM DO ARQUIVO: dist\src\components\sections\process-section.json ---
+
+--- INÍCIO DO ARQUIVO: dist\src\components\sections\team-grid.json ---
+
+{
+    "collectionName": "components_sections_team_grids",
+    "info": {
+        "displayName": "Team Grid"
+    },
+    "options": {},
+    "attributes": {
+        "title": {
+            "type": "string",
+            "default": "Nossa Equipe"
+        },
+        "description": {
+            "type": "string"
+        },
+        "team_members": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::team-member.team-member"
+        }
+    },
+    "config": {}
+}
+
+
+--- FIM DO ARQUIVO: dist\src\components\sections\team-grid.json ---
+
+--- INÍCIO DO ARQUIVO: dist\src\components\sections\urgency-banner.json ---
+
+{
+    "collectionName": "components_sections_urgency_banners",
+    "info": {
+        "displayName": "Urgency Banner",
+        "icon": "bell"
+    },
+    "options": {},
+    "attributes": {
+        "title": {
+            "type": "string"
+        },
+        "subtitle": {
+            "type": "string"
+        },
+        "buttonText": {
+            "type": "string"
+        }
+    },
+    "config": {}
+}
+
+
+--- FIM DO ARQUIVO: dist\src\components\sections\urgency-banner.json ---
+
+--- INÍCIO DO ARQUIVO: dist\src\components\sections\video-section.json ---
+
+{
+    "collectionName": "components_sections_video_sections",
+    "info": {
+        "displayName": "VideoSection"
+    },
+    "options": {},
+    "attributes": {},
+    "config": {}
+}
+
+
+--- FIM DO ARQUIVO: dist\src\components\sections\video-section.json ---
+
+--- INÍCIO DO ARQUIVO: dist\src\index.js ---
+
+"use strict";
+// import type { Core } from '@strapi/strapi';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = {
+    /**
+     * An asynchronous register function that runs before
+     * your application is initialized.
+     *
+     * This gives you an opportunity to extend code.
+     */
+    register( /* { strapi }: { strapi: Core.Strapi } */) { },
+    /**
+     * An asynchronous bootstrap function that runs before
+     * your application gets started.
+     *
+     * This gives you an opportunity to set up your data model,
+     * run jobs, or perform some special logic.
+     */
+    bootstrap( /* { strapi }: { strapi: Core.Strapi } */) { },
+};
+
+
+--- FIM DO ARQUIVO: dist\src\index.js ---
+
+--- INÍCIO DO ARQUIVO: package.json ---
+
+{
+  "name": "projetisa-backend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Strapi application",
+  "scripts": {
+    "build": "strapi build",
+    "console": "strapi console",
+    "deploy": "strapi deploy",
+    "dev": "strapi develop",
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "strapi": "strapi",
+    "upgrade": "npx @strapi/upgrade latest",
+    "upgrade:dry": "npx @strapi/upgrade latest --dry"
+  },
+  "dependencies": {
+    "@strapi/plugin-cloud": "5.25.0",
+    "@strapi/plugin-users-permissions": "5.25.0",
+    "@strapi/strapi": "5.25.0",
+    "better-sqlite3": "11.3.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "styled-components": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=22.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "uuid": "9e85a846-cb9d-4d6d-8ff7-ea660838356d",
+    "installId": "a739fb09d90289f963cb9420fe0dd72e9bd1b2bec2d36e58ea589609b28e0b96"
+  }
+}
+
+
+--- FIM DO ARQUIVO: package.json ---
+
+--- INÍCIO DO ARQUIVO: README.md ---
+
+# 🚀 Getting started with Strapi
+
+Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+
+### `develop`
+
+Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
+
+```
+npm run develop
+# or
+yarn develop
+```
+
+### `start`
+
+Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
+
+```
+npm run start
+# or
+yarn start
+```
+
+### `build`
+
+Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
+
+```
+npm run build
+# or
+yarn build
+```
+
+## ⚙️ Deployment
+
+Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
+
+```
+yarn strapi deploy
+```
+
+## 📚 Learn more
+
+- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
+- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
+- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
+- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
+- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
+
+Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
+
+## ✨ Community
+
+- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
+- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
+- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
+
+---
+
+<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+
+
+--- FIM DO ARQUIVO: README.md ---
+
+--- INÍCIO DO ARQUIVO: src\admin\app.example.tsx ---
+
+import type { StrapiApp } from '@strapi/strapi/admin';
+
+export default {
+  config: {
+    locales: [
+      // 'ar',
+      // 'fr',
+      // 'cs',
+      // 'de',
+      // 'dk',
+      // 'es',
+      // 'he',
+      // 'id',
+      // 'it',
+      // 'ja',
+      // 'ko',
+      // 'ms',
+      // 'nl',
+      // 'no',
+      // 'pl',
+      // 'pt-BR',
+      // 'pt',
+      // 'ru',
+      // 'sk',
+      // 'sv',
+      // 'th',
+      // 'tr',
+      // 'uk',
+      // 'vi',
+      // 'zh-Hans',
+      // 'zh',
+    ],
+  },
+  bootstrap(app: StrapiApp) {
+    console.log(app);
+  },
+};
+
+
+--- FIM DO ARQUIVO: src\admin\app.example.tsx ---
+
+--- INÍCIO DO ARQUIVO: src\admin\tsconfig.json ---
+
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
+  },
+  "include": ["../plugins/**/admin/src/**/*", "./"],
+  "exclude": ["node_modules/", "build/", "dist/", "**/*.test.ts"]
+}
+
+
+--- FIM DO ARQUIVO: src\admin\tsconfig.json ---
+
+--- INÍCIO DO ARQUIVO: src\admin\vite.config.example.ts ---
+
+import { mergeConfig, type UserConfig } from 'vite';
+
+export default (config: UserConfig) => {
+  // Important: always return the modified config
+  return mergeConfig(config, {
+    resolve: {
+      alias: {
+        '@': '/src',
+      },
+    },
+  });
+};
+
+
+--- FIM DO ARQUIVO: src\admin\vite.config.example.ts ---
+
+--- INÍCIO DO ARQUIVO: src\api\article\content-types\article\schema.json ---
+
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "singularName": "article",
+    "pluralName": "articles",
+    "displayName": "Article"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "summary": {
+      "type": "text"
+    },
+    "coverImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "contentBlocks": {
+      "type": "dynamiczone",
+      "components": [
+        "content-sections.text-block",
+        "content-sections.image-block"
+      ]
+    }
+  }
+}
+
+
+--- FIM DO ARQUIVO: src\api\article\content-types\article\schema.json ---
+
+--- INÍCIO DO ARQUIVO: src\api\article\controllers\article.ts ---
+
+/**
+ * article controller
+ */
+
+import { factories } from '@strapi/strapi'
+
+export default factories.createCoreController('api::article.article');
+
+
+--- FIM DO ARQUIVO: src\api\article\controllers\article.ts ---
+
+--- INÍCIO DO ARQUIVO: src\api\article\routes\article.ts ---
+
+/**
+ * article router
+ */
+
+import { factories } from '@strapi/strapi';
+
+export default factories.createCoreRouter('api::article.article');
+
+
+--- FIM DO ARQUIVO: src\api\article\routes\article.ts ---
+
+--- INÍCIO DO ARQUIVO: src\api\article\services\article.ts ---
+
+/**
+ * article service
+ */
+
+import { factories } from '@strapi/strapi';
+
+export default factories.createCoreService('api::article.article');
+
+
+--- FIM DO ARQUIVO: src\api\article\services\article.ts ---
+
+--- INÍCIO DO ARQUIVO: src\api\faq\content-types\faq\schema.json ---
+
+{
+  "kind": "collectionType",
+  "collectionName": "faqs",
+  "info": {
+    "singularName": "faq",
+    "pluralName": "faqs",
+    "displayName": "FAQ"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "question": {
+      "type": "string",
+      "required": true
+    },
+    "answer": {
+      "type": "blocks",
+      "required": true
+    },
+    "category": {
+      "type": "string"
+    },
+    "order": {
+      "type": "integer"
+    }
+  }
+}
+
+
+--- FIM DO ARQUIVO: src\api\faq\content-types\faq\schema.json ---
+
+--- INÍCIO DO ARQUIVO: src\api\faq\controllers\faq.ts ---
+
+/**
+ * faq controller
+ */
+
+import { factories } from '@strapi/strapi'
+
+export default factories.createCoreController('api::faq.faq');
+
+
+--- FIM DO ARQUIVO: src\api\faq\controllers\faq.ts ---
+
+--- INÍCIO DO ARQUIVO: src\api\faq\routes\faq.ts ---
+
+/**
+ * faq router
+ */
+
+import { factories } from '@strapi/strapi';
+
+export default factories.createCoreRouter('api::faq.faq');
+
+
+--- FIM DO ARQUIVO: src\api\faq\routes\faq.ts ---
+
+--- INÍCIO DO ARQUIVO: src\api\faq\services\faq.ts ---
+
+/**
+ * faq service
+ */
+
+import { factories } from '@strapi/strapi';
+
+export default factories.createCoreService('api::faq.faq');
+
+
+--- FIM DO ARQUIVO: src\api\faq\services\faq.ts ---
+
+--- INÍCIO DO ARQUIVO: src\api\feedback-video\content-types\feedback-video\schema.json ---
+
+{
+  "kind": "collectionType",
+  "collectionName": "feedback_videos",
+  "info": {
+    "singularName": "feedback-video",
+    "pluralName": "feedback-videos",
+    "displayName": " Feedback Video"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "clientName": {
+      "type": "string",
+      "required": true
+    },
+    "videoUrl": {
+      "type": "string"
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "videoFile": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
+
+
+--- FIM DO ARQUIVO: src\api\feedback-video\content-types\feedback-video\schema.json ---
+
+--- INÍCIO DO ARQUIVO: src\api\feedback-video\controllers\feedback-video.ts ---
+
+/**
+ * feedback-video controller
+ */
+
+import { factories } from '@strapi/strapi'
+
+export default factories.createCoreController('api::feedback-video.feedback-video');
+
+
+--- FIM DO ARQUIVO: src\api\feedback-video\controllers\feedback-video.ts ---
+
+--- INÍCIO DO ARQUIVO: src\api\feedback-video\routes\feedback-video.ts ---
+
+/**
+ * feedback-video router
+ */
+
+import { factories } from '@strapi/strapi';
+
+export default factories.createCoreRouter('api::feedback-video.feedback-video');
+
+
+--- FIM DO ARQUIVO: src\api\feedback-video\routes\feedback-video.ts ---
+
+--- INÍCIO DO ARQUIVO: src\api\feedback-video\services\feedback-video.ts ---
+
+/**
+ * feedback-video service
+ */
+
+import { factories } from '@strapi/strapi';
+
+export default factories.createCoreService('api::feedback-video.feedback-video');
+
+
+--- FIM DO ARQUIVO: src\api\feedback-video\services\feedback-video.ts ---
+
+--- INÍCIO DO ARQUIVO: src\api\home\content-types\home\schema.json ---
+
+{
+  "kind": "singleType",
+  "collectionName": "homes",
+  "info": {
+    "singularName": "home",
+    "pluralName": "homes",
+    "displayName": "home"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "sections": {
+      "type": "dynamiczone",
+      "components": [
+        "sections.video-section",
+        "sections.urgency-banner",
+        "sections.team-grid",
+        "sections.process-section",
+        "sections.other-services",
+        "sections.hero-section",
+        "sections.faq-section",
+        "sections.benefits-section",
+        "sections.final-cta"
+      ]
+    },
+    "Blocks": {
+      "type": "component",
+      "component": "content-sections.text-block",
+      "repeatable": true
+    }
+  }
+}
+
+
+--- FIM DO ARQUIVO: src\api\home\content-types\home\schema.json ---
+
+--- INÍCIO DO ARQUIVO: src\api\home\controllers\home.ts ---
+
+/**
+ * home controller
+ */
+
+import { factories } from '@strapi/strapi'
+
+export default factories.createCoreController('api::home.home');
+
+
+--- FIM DO ARQUIVO: src\api\home\controllers\home.ts ---
+
+--- INÍCIO DO ARQUIVO: src\api\home\routes\home.ts ---
+
+/**
+ * home router
+ */
+
+import { factories } from '@strapi/strapi';
+
+export default factories.createCoreRouter('api::home.home');
+
+
+--- FIM DO ARQUIVO: src\api\home\routes\home.ts ---
+
+--- INÍCIO DO ARQUIVO: src\api\home\services\home.ts ---
+
+/**
+ * home service
+ */
+
+import { factories } from '@strapi/strapi';
+
+export default factories.createCoreService('api::home.home');
+
+
+--- FIM DO ARQUIVO: src\api\home\services\home.ts ---
+
+--- INÍCIO DO ARQUIVO: src\api\location\content-types\location\schema.json ---
+
+{
+  "kind": "collectionType",
+  "collectionName": "locations",
+  "info": {
+    "singularName": "location",
+    "pluralName": "locations",
+    "displayName": "Location"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "blocks"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
+
+
+--- FIM DO ARQUIVO: src\api\location\content-types\location\schema.json ---
+
+--- INÍCIO DO ARQUIVO: src\api\location\controllers\location.ts ---
+
+/**
+ * location controller
+ */
+
+import { factories } from '@strapi/strapi'
+
+export default factories.createCoreController('api::location.location');
+
+
+--- FIM DO ARQUIVO: src\api\location\controllers\location.ts ---
+
+--- INÍCIO DO ARQUIVO: src\api\location\routes\location.ts ---
+
+/**
+ * location router
+ */
+
+import { factories } from '@strapi/strapi';
+
+export default factories.createCoreRouter('api::location.location');
+
+
+--- FIM DO ARQUIVO: src\api\location\routes\location.ts ---
+
+--- INÍCIO DO ARQUIVO: src\api\location\services\location.ts ---
+
+/**
+ * location service
+ */
+
+import { factories } from '@strapi/strapi';
+
+export default factories.createCoreService('api::location.location');
+
+
+--- FIM DO ARQUIVO: src\api\location\services\location.ts ---
+
+--- INÍCIO DO ARQUIVO: src\api\project\content-types\project\schema.json ---
+
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "Project"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "summary": {
+      "type": "text"
+    },
+    "coverImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "contentBlocks": {
+      "type": "dynamiczone",
+      "components": [
+        "content-sections.text-block",
+        "content-sections.image-block"
+      ]
+    }
+  }
+}
+
+
+--- FIM DO ARQUIVO: src\api\project\content-types\project\schema.json ---
+
+--- INÍCIO DO ARQUIVO: src\api\project\controllers\project.ts ---
+
+/**
+ * project controller
+ */
+
+import { factories } from '@strapi/strapi'
+
+export default factories.createCoreController('api::project.project');
+
+
+--- FIM DO ARQUIVO: src\api\project\controllers\project.ts ---
+
+--- INÍCIO DO ARQUIVO: src\api\project\routes\project.ts ---
+
+/**
+ * project router
+ */
+
+import { factories } from '@strapi/strapi';
+
+export default factories.createCoreRouter('api::project.project');
+
+
+--- FIM DO ARQUIVO: src\api\project\routes\project.ts ---
+
+--- INÍCIO DO ARQUIVO: src\api\project\services\project.ts ---
+
+/**
+ * project service
+ */
+
+import { factories } from '@strapi/strapi';
+
+export default factories.createCoreService('api::project.project');
+
+
+--- FIM DO ARQUIVO: src\api\project\services\project.ts ---
+
+--- INÍCIO DO ARQUIVO: src\api\service\content-types\service\schema.json ---
+
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "info": {
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "Service"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "summary": {
+      "type": "text"
+    },
+    "icon": {
+      "type": "string"
+    },
+    "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "contentBlocks": {
+      "type": "dynamiczone",
+      "components": [
+        "content-sections.text-block",
+        "content-sections.image-block"
+      ]
+    }
+  }
+}
+
+
+--- FIM DO ARQUIVO: src\api\service\content-types\service\schema.json ---
+
+--- INÍCIO DO ARQUIVO: src\api\service\controllers\service.ts ---
+
+/**
+ * service controller
+ */
+
+import { factories } from '@strapi/strapi'
+
+export default factories.createCoreController('api::service.service');
+
+
+--- FIM DO ARQUIVO: src\api\service\controllers\service.ts ---
+
+--- INÍCIO DO ARQUIVO: src\api\service\routes\service.ts ---
+
+/**
+ * service router
+ */
+
+import { factories } from '@strapi/strapi';
+
+export default factories.createCoreRouter('api::service.service');
+
+
+--- FIM DO ARQUIVO: src\api\service\routes\service.ts ---
+
+--- INÍCIO DO ARQUIVO: src\api\service\services\service.ts ---
+
+/**
+ * service service
+ */
+
+import { factories } from '@strapi/strapi';
+
+export default factories.createCoreService('api::service.service');
+
+
+--- FIM DO ARQUIVO: src\api\service\services\service.ts ---
+
+--- INÍCIO DO ARQUIVO: src\api\team-member\content-types\team-member\schema.json ---
+
+{
+  "kind": "collectionType",
+  "collectionName": "team_members",
+  "info": {
+    "singularName": "team-member",
+    "pluralName": "team-members",
+    "displayName": "Team Member"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "position": {
+      "type": "string",
+      "required": true
+    },
+    "bio": {
+      "type": "blocks"
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "email": {
+      "type": "email"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "linkedin": {
+      "type": "string"
+    },
+    "order": {
+      "type": "integer"
+    }
+  }
+}
+
+
+--- FIM DO ARQUIVO: src\api\team-member\content-types\team-member\schema.json ---
+
+--- INÍCIO DO ARQUIVO: src\api\team-member\controllers\team-member.ts ---
+
+/**
+ * team-member controller
+ */
+
+import { factories } from '@strapi/strapi'
+
+export default factories.createCoreController('api::team-member.team-member');
+
+
+--- FIM DO ARQUIVO: src\api\team-member\controllers\team-member.ts ---
+
+--- INÍCIO DO ARQUIVO: src\api\team-member\routes\team-member.ts ---
+
+/**
+ * team-member router
+ */
+
+import { factories } from '@strapi/strapi';
+
+export default factories.createCoreRouter('api::team-member.team-member');
+
+
+--- FIM DO ARQUIVO: src\api\team-member\routes\team-member.ts ---
+
+--- INÍCIO DO ARQUIVO: src\api\team-member\services\team-member.ts ---
+
+/**
+ * team-member service
+ */
+
+import { factories } from '@strapi/strapi';
+
+export default factories.createCoreService('api::team-member.team-member');
+
+
+--- FIM DO ARQUIVO: src\api\team-member\services\team-member.ts ---
+
+--- INÍCIO DO ARQUIVO: src\components\content-sections\image-block.json ---
+
+{
+  "collectionName": "components_content_sections_image_blocks",
+  "info": {
+    "displayName": "Image Block"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "caption": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
+
+
+--- FIM DO ARQUIVO: src\components\content-sections\image-block.json ---
+
+--- INÍCIO DO ARQUIVO: src\components\content-sections\text-block.json ---
+
+{
+  "collectionName": "components_content_sections_text_blocks",
+  "info": {
+    "displayName": "Text Block"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "blocks"
+    }
+  },
+  "config": {}
+}
+
+
+--- FIM DO ARQUIVO: src\components\content-sections\text-block.json ---
+
+--- INÍCIO DO ARQUIVO: src\components\elements\benefit-item.json ---
+
+{
+  "collectionName": "components_elements_benefit_items",
+  "info": {
+    "displayName": "Benefit Item",
+    "icon": "star"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
+
+
+--- FIM DO ARQUIVO: src\components\elements\benefit-item.json ---
+
+--- INÍCIO DO ARQUIVO: src\components\elements\checklist-item.json ---
+
+{
+  "collectionName": "components_elements_checklist_items",
+  "info": {
+    "displayName": "Checklist Item",
+    "icon": "check"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
+
+
+--- FIM DO ARQUIVO: src\components\elements\checklist-item.json ---
+
+--- INÍCIO DO ARQUIVO: src\components\elements\process-step.json ---
+
+{
+  "collectionName": "components_elements_process_steps",
+  "info": {
+    "displayName": "Process Step"
+  },
+  "options": {},
+  "attributes": {
+    "step": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
+
+
+--- FIM DO ARQUIVO: src\components\elements\process-step.json ---
+
+--- INÍCIO DO ARQUIVO: src\components\sections\benefits-section.json ---
+
+{
+  "collectionName": "components_sections_benefits_sections",
+  "info": {
+    "displayName": "Benefits Section",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "benefits": {
+      "type": "component",
+      "component": "elements.benefit-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
+
+
+--- FIM DO ARQUIVO: src\components\sections\benefits-section.json ---
+
+--- INÍCIO DO ARQUIVO: src\components\sections\faq-section.json ---
+
+{
+  "collectionName": "components_sections_faq_sections",
+  "info": {
+    "displayName": "FaqSection"
+  },
+  "options": {},
+  "attributes": {},
+  "config": {}
+}
+
+
+--- FIM DO ARQUIVO: src\components\sections\faq-section.json ---
+
+--- INÍCIO DO ARQUIVO: src\components\sections\final-cta.json ---
+
+{
+  "collectionName": "components_sections_final_ctas",
+  "info": {
+    "displayName": "Final CTA"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "buttonText": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
+
+
+--- FIM DO ARQUIVO: src\components\sections\final-cta.json ---
+
+--- INÍCIO DO ARQUIVO: src\components\sections\hero-section.json ---
+
+{
+  "collectionName": "components_sections_hero_sections",
+  "info": {
+    "displayName": "Hero Section",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "primaryButtonText": {
+      "type": "string"
+    },
+    "primaryButtonLink": {
+      "type": "string"
+    },
+    "formTitle": {
+      "type": "string"
+    },
+    "formButtonText": {
+      "type": "string"
+    },
+    "checklistItems": {
+      "type": "component",
+      "component": "elements.checklist-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
+
+
+--- FIM DO ARQUIVO: src\components\sections\hero-section.json ---
+
+--- INÍCIO DO ARQUIVO: src\components\sections\location-grid.json ---
+
+{
+  "collectionName": "components_sections_location_grids",
+  "info": {
+    "displayName": " Location Grid"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Nossas Localizações"
+    },
+    "description": {
+      "type": "string"
+    },
+    "location": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::location.location"
+    }
+  },
+  "config": {}
+}
+
+
+--- FIM DO ARQUIVO: src\components\sections\location-grid.json ---
+
+--- INÍCIO DO ARQUIVO: src\components\sections\other-services.json ---
+
+{
+  "collectionName": "components_sections_other_services",
+  "info": {
+    "displayName": "OtherServices"
+  },
+  "options": {},
+  "attributes": {},
+  "config": {}
+}
+
+
+--- FIM DO ARQUIVO: src\components\sections\other-services.json ---
+
+--- INÍCIO DO ARQUIVO: src\components\sections\process-section.json ---
+
+{
+  "collectionName": "components_sections_process_sections",
+  "info": {
+    "displayName": "Process Section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "steps": {
+      "type": "component",
+      "component": "elements.process-step",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
+
+
+--- FIM DO ARQUIVO: src\components\sections\process-section.json ---
+
+--- INÍCIO DO ARQUIVO: src\components\sections\team-grid.json ---
+
+{
+  "collectionName": "components_sections_team_grids",
+  "info": {
+    "displayName": "Team Grid"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Nossa Equipe"
+    },
+    "description": {
+      "type": "string"
+    },
+    "team_members": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::team-member.team-member"
+    }
+  },
+  "config": {}
+}
+
+
+--- FIM DO ARQUIVO: src\components\sections\team-grid.json ---
+
+--- INÍCIO DO ARQUIVO: src\components\sections\urgency-banner.json ---
+
+{
+  "collectionName": "components_sections_urgency_banners",
+  "info": {
+    "displayName": "Urgency Banner",
+    "icon": "bell"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "buttonText": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
+
+
+--- FIM DO ARQUIVO: src\components\sections\urgency-banner.json ---
+
+--- INÍCIO DO ARQUIVO: src\components\sections\video-section.json ---
+
+{
+  "collectionName": "components_sections_video_sections",
+  "info": {
+    "displayName": "VideoSection"
+  },
+  "options": {},
+  "attributes": {},
+  "config": {}
+}
+
+
+--- FIM DO ARQUIVO: src\components\sections\video-section.json ---
+
+--- INÍCIO DO ARQUIVO: src\index.ts ---
+
+// import type { Core } from '@strapi/strapi';
+
+export default {
+  /**
+   * An asynchronous register function that runs before
+   * your application is initialized.
+   *
+   * This gives you an opportunity to extend code.
+   */
+  register(/* { strapi }: { strapi: Core.Strapi } */) {},
+
+  /**
+   * An asynchronous bootstrap function that runs before
+   * your application gets started.
+   *
+   * This gives you an opportunity to set up your data model,
+   * run jobs, or perform some special logic.
+   */
+  bootstrap(/* { strapi }: { strapi: Core.Strapi } */) {},
+};
+
+
+--- FIM DO ARQUIVO: src\index.ts ---
+
+--- INÍCIO DO ARQUIVO: tsconfig.json ---
+
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "lib": ["ES2020"],
+    "target": "ES2019",
+    "strict": false,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "noEmitOnError": true,
+    "noImplicitThis": true,
+    "outDir": "dist",
+    "rootDir": "."
+  },
+  "include": [
+    // Include root files
+    "./",
+    // Include all ts files
+    "./**/*.ts",
+    // Include all js files
+    "./**/*.js",
+    // Force the JSON files in the src folder to be included
+    "src/**/*.json"
+  ],
+
+  "exclude": [
+    "node_modules/",
+    "build/",
+    "dist/",
+    ".cache/",
+    ".tmp/",
+
+    // Do not include admin files in the server compilation
+    "src/admin/",
+    // Do not include test files
+    "**/*.test.*",
+    // Do not include plugins in the server compilation
+    "src/plugins/**"
+  ]
+}
+
+
+--- FIM DO ARQUIVO: tsconfig.json ---
+
+--- INÍCIO DO ARQUIVO: types\generated\components.d.ts ---
+
+import type { Schema, Struct } from '@strapi/strapi';
+
+export interface ContentSectionsImageBlock extends Struct.ComponentSchema {
+  collectionName: 'components_content_sections_image_blocks';
+  info: {
+    displayName: 'Image Block';
+  };
+  attributes: {
+    caption: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface ContentSectionsTextBlock extends Struct.ComponentSchema {
+  collectionName: 'components_content_sections_text_blocks';
+  info: {
+    displayName: 'Text Block';
+  };
+  attributes: {
+    content: Schema.Attribute.Blocks;
+  };
+}
+
+export interface ElementsBenefitItem extends Struct.ComponentSchema {
+  collectionName: 'components_elements_benefit_items';
+  info: {
+    displayName: 'Benefit Item';
+    icon: 'star';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    icon: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ElementsChecklistItem extends Struct.ComponentSchema {
+  collectionName: 'components_elements_checklist_items';
+  info: {
+    displayName: 'Checklist Item';
+    icon: 'check';
+  };
+  attributes: {
+    text: Schema.Attribute.String;
+  };
+}
+
+export interface ElementsProcessStep extends Struct.ComponentSchema {
+  collectionName: 'components_elements_process_steps';
+  info: {
+    displayName: 'Process Step';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    step: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsBenefitsSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_benefits_sections';
+  info: {
+    displayName: 'Benefits Section';
+    icon: 'apps';
+  };
+  attributes: {
+    benefits: Schema.Attribute.Component<'elements.benefit-item', true>;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsFaqSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_faq_sections';
+  info: {
+    displayName: 'FaqSection';
+  };
+  attributes: {};
+}
+
+export interface SectionsFinalCta extends Struct.ComponentSchema {
+  collectionName: 'components_sections_final_ctas';
+  info: {
+    displayName: 'Final CTA';
+  };
+  attributes: {
+    buttonText: Schema.Attribute.String;
+    subtitle: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_hero_sections';
+  info: {
+    displayName: 'Hero Section';
+    icon: 'layout';
+  };
+  attributes: {
+    backgroundImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.Required;
+    checklistItems: Schema.Attribute.Component<'elements.checklist-item', true>;
+    formButtonText: Schema.Attribute.String;
+    formTitle: Schema.Attribute.String;
+    primaryButtonLink: Schema.Attribute.String;
+    primaryButtonText: Schema.Attribute.String;
+    subtitle: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsLocationGrid extends Struct.ComponentSchema {
+  collectionName: 'components_sections_location_grids';
+  info: {
+    displayName: ' Location Grid';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    location: Schema.Attribute.Relation<'oneToMany', 'api::location.location'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Nossas Localiza\u00E7\u00F5es'>;
+  };
+}
+
+export interface SectionsOtherServices extends Struct.ComponentSchema {
+  collectionName: 'components_sections_other_services';
+  info: {
+    displayName: 'OtherServices';
+  };
+  attributes: {};
+}
+
+export interface SectionsProcessSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_process_sections';
+  info: {
+    displayName: 'Process Section';
+  };
+  attributes: {
+    steps: Schema.Attribute.Component<'elements.process-step', true>;
+    subtitle: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsTeamGrid extends Struct.ComponentSchema {
+  collectionName: 'components_sections_team_grids';
+  info: {
+    displayName: 'Team Grid';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    team_members: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::team-member.team-member'
+    >;
+    title: Schema.Attribute.String & Schema.Attribute.DefaultTo<'Nossa Equipe'>;
+  };
+}
+
+export interface SectionsUrgencyBanner extends Struct.ComponentSchema {
+  collectionName: 'components_sections_urgency_banners';
+  info: {
+    displayName: 'Urgency Banner';
+    icon: 'bell';
+  };
+  attributes: {
+    buttonText: Schema.Attribute.String;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsVideoSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_video_sections';
+  info: {
+    displayName: 'VideoSection';
+  };
+  attributes: {};
+}
+
+declare module '@strapi/strapi' {
+  export module Public {
+    export interface ComponentSchemas {
+      'content-sections.image-block': ContentSectionsImageBlock;
+      'content-sections.text-block': ContentSectionsTextBlock;
+      'elements.benefit-item': ElementsBenefitItem;
+      'elements.checklist-item': ElementsChecklistItem;
+      'elements.process-step': ElementsProcessStep;
+      'sections.benefits-section': SectionsBenefitsSection;
+      'sections.faq-section': SectionsFaqSection;
+      'sections.final-cta': SectionsFinalCta;
+      'sections.hero-section': SectionsHeroSection;
+      'sections.location-grid': SectionsLocationGrid;
+      'sections.other-services': SectionsOtherServices;
+      'sections.process-section': SectionsProcessSection;
+      'sections.team-grid': SectionsTeamGrid;
+      'sections.urgency-banner': SectionsUrgencyBanner;
+      'sections.video-section': SectionsVideoSection;
+    }
+  }
+}
+
+
+--- FIM DO ARQUIVO: types\generated\components.d.ts ---
+
+--- INÍCIO DO ARQUIVO: types\generated\contentTypes.d.ts ---
+
+import type { Schema, Struct } from '@strapi/strapi';
+
+export interface AdminApiToken extends Struct.CollectionTypeSchema {
+  collectionName: 'strapi_api_tokens';
+  info: {
+    description: '';
+    displayName: 'Api Token';
+    name: 'Api Token';
+    pluralName: 'api-tokens';
+    singularName: 'api-token';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    accessKey: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }> &
+      Schema.Attribute.DefaultTo<''>;
+    encryptedKey: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
+    expiresAt: Schema.Attribute.DateTime;
+    lastUsedAt: Schema.Attribute.DateTime;
+    lifespan: Schema.Attribute.BigInteger;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'admin::api-token'> &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
+    permissions: Schema.Attribute.Relation<
+      'oneToMany',
+      'admin::api-token-permission'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    type: Schema.Attribute.Enumeration<['read-only', 'full-access', 'custom']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'read-only'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface AdminApiTokenPermission extends Struct.CollectionTypeSchema {
+  collectionName: 'strapi_api_token_permissions';
+  info: {
+    description: '';
+    displayName: 'API Token Permission';
+    name: 'API Token Permission';
+    pluralName: 'api-token-permissions';
+    singularName: 'api-token-permission';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    action: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'admin::api-token-permission'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    token: Schema.Attribute.Relation<'manyToOne', 'admin::api-token'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface AdminPermission extends Struct.CollectionTypeSchema {
+  collectionName: 'admin_permissions';
+  info: {
+    description: '';
+    displayName: 'Permission';
+    name: 'Permission';
+    pluralName: 'permissions';
+    singularName: 'permission';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    action: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
+    actionParameters: Schema.Attribute.JSON & Schema.Attribute.DefaultTo<{}>;
+    conditions: Schema.Attribute.JSON & Schema.Attribute.DefaultTo<[]>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'admin::permission'> &
+      Schema.Attribute.Private;
+    properties: Schema.Attribute.JSON & Schema.Attribute.DefaultTo<{}>;
+    publishedAt: Schema.Attribute.DateTime;
+    role: Schema.Attribute.Relation<'manyToOne', 'admin::role'>;
+    subject: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface AdminRole extends Struct.CollectionTypeSchema {
+  collectionName: 'admin_roles';
+  info: {
+    description: '';
+    displayName: 'Role';
+    name: 'Role';
+    pluralName: 'roles';
+    singularName: 'role';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    code: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'admin::role'> &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
+    permissions: Schema.Attribute.Relation<'oneToMany', 'admin::permission'>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    users: Schema.Attribute.Relation<'manyToMany', 'admin::user'>;
+  };
+}
+
+export interface AdminSession extends Struct.CollectionTypeSchema {
+  collectionName: 'strapi_sessions';
+  info: {
+    description: 'Session Manager storage';
+    displayName: 'Session';
+    name: 'Session';
+    pluralName: 'sessions';
+    singularName: 'session';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+    i18n: {
+      localized: false;
+    };
+  };
+  attributes: {
+    absoluteExpiresAt: Schema.Attribute.DateTime & Schema.Attribute.Private;
+    childId: Schema.Attribute.String & Schema.Attribute.Private;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    deviceId: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Private;
+    expiresAt: Schema.Attribute.DateTime &
+      Schema.Attribute.Required &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'admin::session'> &
+      Schema.Attribute.Private;
+    origin: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sessionId: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Private &
+      Schema.Attribute.Unique;
+    status: Schema.Attribute.String & Schema.Attribute.Private;
+    type: Schema.Attribute.String & Schema.Attribute.Private;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    userId: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface AdminTransferToken extends Struct.CollectionTypeSchema {
+  collectionName: 'strapi_transfer_tokens';
+  info: {
+    description: '';
+    displayName: 'Transfer Token';
+    name: 'Transfer Token';
+    pluralName: 'transfer-tokens';
+    singularName: 'transfer-token';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    accessKey: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }> &
+      Schema.Attribute.DefaultTo<''>;
+    expiresAt: Schema.Attribute.DateTime;
+    lastUsedAt: Schema.Attribute.DateTime;
+    lifespan: Schema.Attribute.BigInteger;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'admin::transfer-token'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
+    permissions: Schema.Attribute.Relation<
+      'oneToMany',
+      'admin::transfer-token-permission'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface AdminTransferTokenPermission
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'strapi_transfer_token_permissions';
+  info: {
+    description: '';
+    displayName: 'Transfer Token Permission';
+    name: 'Transfer Token Permission';
+    pluralName: 'transfer-token-permissions';
+    singularName: 'transfer-token-permission';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    action: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'admin::transfer-token-permission'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    token: Schema.Attribute.Relation<'manyToOne', 'admin::transfer-token'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface AdminUser extends Struct.CollectionTypeSchema {
+  collectionName: 'admin_users';
+  info: {
+    description: '';
+    displayName: 'User';
+    name: 'User';
+    pluralName: 'users';
+    singularName: 'user';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    blocked: Schema.Attribute.Boolean &
+      Schema.Attribute.Private &
+      Schema.Attribute.DefaultTo<false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email &
+      Schema.Attribute.Required &
+      Schema.Attribute.Private &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 6;
+      }>;
+    firstname: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
+    isActive: Schema.Attribute.Boolean &
+      Schema.Attribute.Private &
+      Schema.Attribute.DefaultTo<false>;
+    lastname: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'admin::user'> &
+      Schema.Attribute.Private;
+    password: Schema.Attribute.Password &
+      Schema.Attribute.Private &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 6;
+      }>;
+    preferedLanguage: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    registrationToken: Schema.Attribute.String & Schema.Attribute.Private;
+    resetPasswordToken: Schema.Attribute.String & Schema.Attribute.Private;
+    roles: Schema.Attribute.Relation<'manyToMany', 'admin::role'> &
+      Schema.Attribute.Private;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    username: Schema.Attribute.String;
+  };
+}
+
+export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
+  collectionName: 'articles';
+  info: {
+    displayName: 'Article';
+    pluralName: 'articles';
+    singularName: 'article';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contentBlocks: Schema.Attribute.DynamicZone<
+      ['content-sections.text-block', 'content-sections.image-block']
+    >;
+    coverImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::article.article'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
+    summary: Schema.Attribute.Text;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
+  collectionName: 'faqs';
+  info: {
+    displayName: 'FAQ';
+    pluralName: 'faqs';
+    singularName: 'faq';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    answer: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    category: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'> &
+      Schema.Attribute.Private;
+    order: Schema.Attribute.Integer;
+    publishedAt: Schema.Attribute.DateTime;
+    question: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFeedbackVideoFeedbackVideo
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'feedback_videos';
+  info: {
+    displayName: ' Feedback Video';
+    pluralName: 'feedback-videos';
+    singularName: 'feedback-video';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    clientName: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.String;
+    featured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::feedback-video.feedback-video'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    thumbnail: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    videoFile: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    videoUrl: Schema.Attribute.String;
+  };
+}
+
+export interface ApiHomeHome extends Struct.SingleTypeSchema {
+  collectionName: 'homes';
+  info: {
+    displayName: 'home';
+    pluralName: 'homes';
+    singularName: 'home';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Blocks: Schema.Attribute.Component<'content-sections.text-block', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.DynamicZone<
+      [
+        'sections.video-section',
+        'sections.urgency-banner',
+        'sections.team-grid',
+        'sections.process-section',
+        'sections.other-services',
+        'sections.hero-section',
+        'sections.faq-section',
+        'sections.benefits-section',
+        'sections.final-cta',
+      ]
+    >;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
+  collectionName: 'locations';
+  info: {
+    displayName: 'Location';
+    pluralName: 'locations';
+    singularName: 'location';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::location.location'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    subtitle: Schema.Attribute.Blocks;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiProjectProject extends Struct.CollectionTypeSchema {
+  collectionName: 'projects';
+  info: {
+    displayName: 'Project';
+    pluralName: 'projects';
+    singularName: 'project';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contentBlocks: Schema.Attribute.DynamicZone<
+      ['content-sections.text-block', 'content-sections.image-block']
+    >;
+    coverImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::project.project'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    summary: Schema.Attribute.Text;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiServiceService extends Struct.CollectionTypeSchema {
+  collectionName: 'services';
+  info: {
+    displayName: 'Service';
+    pluralName: 'services';
+    singularName: 'service';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contentBlocks: Schema.Attribute.DynamicZone<
+      ['content-sections.text-block', 'content-sections.image-block']
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    featuredImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    icon: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::service.service'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    summary: Schema.Attribute.Text;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTeamMemberTeamMember extends Struct.CollectionTypeSchema {
+  collectionName: 'team_members';
+  info: {
+    displayName: 'Team Member';
+    pluralName: 'team-members';
+    singularName: 'team-member';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bio: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email;
+    linkedin: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::team-member.team-member'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    order: Schema.Attribute.Integer;
+    phone: Schema.Attribute.String;
+    photo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
+    position: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface PluginContentReleasesRelease
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'strapi_releases';
+  info: {
+    displayName: 'Release';
+    pluralName: 'releases';
+    singularName: 'release';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    actions: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::content-releases.release-action'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::content-releases.release'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    releasedAt: Schema.Attribute.DateTime;
+    scheduledAt: Schema.Attribute.DateTime;
+    status: Schema.Attribute.Enumeration<
+      ['ready', 'blocked', 'failed', 'done', 'empty']
+    > &
+      Schema.Attribute.Required;
+    timezone: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface PluginContentReleasesReleaseAction
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'strapi_release_actions';
+  info: {
+    displayName: 'Release Action';
+    pluralName: 'release-actions';
+    singularName: 'release-action';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    contentType: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    entryDocumentId: Schema.Attribute.String;
+    isEntryValid: Schema.Attribute.Boolean;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::content-releases.release-action'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    release: Schema.Attribute.Relation<
+      'manyToOne',
+      'plugin::content-releases.release'
+    >;
+    type: Schema.Attribute.Enumeration<['publish', 'unpublish']> &
+      Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface PluginI18NLocale extends Struct.CollectionTypeSchema {
+  collectionName: 'i18n_locale';
+  info: {
+    collectionName: 'locales';
+    description: '';
+    displayName: 'Locale';
+    pluralName: 'locales';
+    singularName: 'locale';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    code: Schema.Attribute.String & Schema.Attribute.Unique;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::i18n.locale'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 50;
+          min: 1;
+        },
+        number
+      >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface PluginReviewWorkflowsWorkflow
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'strapi_workflows';
+  info: {
+    description: '';
+    displayName: 'Workflow';
+    name: 'Workflow';
+    pluralName: 'workflows';
+    singularName: 'workflow';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    contentTypes: Schema.Attribute.JSON &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'[]'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::review-workflows.workflow'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    publishedAt: Schema.Attribute.DateTime;
+    stageRequiredToPublish: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::review-workflows.workflow-stage'
+    >;
+    stages: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::review-workflows.workflow-stage'
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface PluginReviewWorkflowsWorkflowStage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'strapi_workflows_stages';
+  info: {
+    description: '';
+    displayName: 'Stages';
+    name: 'Workflow Stage';
+    pluralName: 'workflow-stages';
+    singularName: 'workflow-stage';
+  };
+  options: {
+    draftAndPublish: false;
+    version: '1.1.0';
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    color: Schema.Attribute.String & Schema.Attribute.DefaultTo<'#4945FF'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::review-workflows.workflow-stage'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    permissions: Schema.Attribute.Relation<'manyToMany', 'admin::permission'>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    workflow: Schema.Attribute.Relation<
+      'manyToOne',
+      'plugin::review-workflows.workflow'
+    >;
+  };
+}
+
+export interface PluginUploadFile extends Struct.CollectionTypeSchema {
+  collectionName: 'files';
+  info: {
+    description: '';
+    displayName: 'File';
+    pluralName: 'files';
+    singularName: 'file';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    alternativeText: Schema.Attribute.String;
+    caption: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    ext: Schema.Attribute.String;
+    folder: Schema.Attribute.Relation<'manyToOne', 'plugin::upload.folder'> &
+      Schema.Attribute.Private;
+    folderPath: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Private &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
+    formats: Schema.Attribute.JSON;
+    hash: Schema.Attribute.String & Schema.Attribute.Required;
+    height: Schema.Attribute.Integer;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::upload.file'
+    > &
+      Schema.Attribute.Private;
+    mime: Schema.Attribute.String & Schema.Attribute.Required;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    previewUrl: Schema.Attribute.String;
+    provider: Schema.Attribute.String & Schema.Attribute.Required;
+    provider_metadata: Schema.Attribute.JSON;
+    publishedAt: Schema.Attribute.DateTime;
+    related: Schema.Attribute.Relation<'morphToMany'>;
+    size: Schema.Attribute.Decimal & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    url: Schema.Attribute.String & Schema.Attribute.Required;
+    width: Schema.Attribute.Integer;
+  };
+}
+
+export interface PluginUploadFolder extends Struct.CollectionTypeSchema {
+  collectionName: 'upload_folders';
+  info: {
+    displayName: 'Folder';
+    pluralName: 'folders';
+    singularName: 'folder';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    children: Schema.Attribute.Relation<'oneToMany', 'plugin::upload.folder'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    files: Schema.Attribute.Relation<'oneToMany', 'plugin::upload.file'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::upload.folder'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
+    parent: Schema.Attribute.Relation<'manyToOne', 'plugin::upload.folder'>;
+    path: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
+    pathId: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface PluginUsersPermissionsPermission
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'up_permissions';
+  info: {
+    description: '';
+    displayName: 'Permission';
+    name: 'permission';
+    pluralName: 'permissions';
+    singularName: 'permission';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    action: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::users-permissions.permission'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    role: Schema.Attribute.Relation<
+      'manyToOne',
+      'plugin::users-permissions.role'
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface PluginUsersPermissionsRole
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'up_roles';
+  info: {
+    description: '';
+    displayName: 'Role';
+    name: 'role';
+    pluralName: 'roles';
+    singularName: 'role';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::users-permissions.role'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 3;
+      }>;
+    permissions: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::users-permissions.permission'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    type: Schema.Attribute.String & Schema.Attribute.Unique;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    users: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::users-permissions.user'
+    >;
+  };
+}
+
+export interface PluginUsersPermissionsUser
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'up_users';
+  info: {
+    description: '';
+    displayName: 'User';
+    name: 'user';
+    pluralName: 'users';
+    singularName: 'user';
+  };
+  options: {
+    draftAndPublish: false;
+    timestamps: true;
+  };
+  attributes: {
+    blocked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    confirmationToken: Schema.Attribute.String & Schema.Attribute.Private;
+    confirmed: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 6;
+      }>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::users-permissions.user'
+    > &
+      Schema.Attribute.Private;
+    password: Schema.Attribute.Password &
+      Schema.Attribute.Private &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 6;
+      }>;
+    provider: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    resetPasswordToken: Schema.Attribute.String & Schema.Attribute.Private;
+    role: Schema.Attribute.Relation<
+      'manyToOne',
+      'plugin::users-permissions.role'
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    username: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 3;
+      }>;
+  };
+}
+
+declare module '@strapi/strapi' {
+  export module Public {
+    export interface ContentTypeSchemas {
+      'admin::api-token': AdminApiToken;
+      'admin::api-token-permission': AdminApiTokenPermission;
+      'admin::permission': AdminPermission;
+      'admin::role': AdminRole;
+      'admin::session': AdminSession;
+      'admin::transfer-token': AdminTransferToken;
+      'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'admin::user': AdminUser;
+      'api::article.article': ApiArticleArticle;
+      'api::faq.faq': ApiFaqFaq;
+      'api::feedback-video.feedback-video': ApiFeedbackVideoFeedbackVideo;
+      'api::home.home': ApiHomeHome;
+      'api::location.location': ApiLocationLocation;
+      'api::project.project': ApiProjectProject;
+      'api::service.service': ApiServiceService;
+      'api::team-member.team-member': ApiTeamMemberTeamMember;
+      'plugin::content-releases.release': PluginContentReleasesRelease;
+      'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
+      'plugin::i18n.locale': PluginI18NLocale;
+      'plugin::review-workflows.workflow': PluginReviewWorkflowsWorkflow;
+      'plugin::review-workflows.workflow-stage': PluginReviewWorkflowsWorkflowStage;
+      'plugin::upload.file': PluginUploadFile;
+      'plugin::upload.folder': PluginUploadFolder;
+      'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
+      'plugin::users-permissions.role': PluginUsersPermissionsRole;
+      'plugin::users-permissions.user': PluginUsersPermissionsUser;
+    }
+  }
+}
+
+
+--- FIM DO ARQUIVO: types\generated\contentTypes.d.ts ---
+

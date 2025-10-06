@@ -39,6 +39,16 @@
     "featured": {
       "type": "boolean",
       "default": false
+    },
+    "videoFile": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }

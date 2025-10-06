@@ -70,6 +70,14 @@ export interface SectionsBenefitsSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsFaqSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_faq_sections';
+  info: {
+    displayName: 'FaqSection';
+  };
+  attributes: {};
+}
+
 export interface SectionsFinalCta extends Struct.ComponentSchema {
   collectionName: 'components_sections_final_ctas';
   info: {
@@ -116,6 +124,14 @@ export interface SectionsLocationGrid extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsOtherServices extends Struct.ComponentSchema {
+  collectionName: 'components_sections_other_services';
+  info: {
+    displayName: 'OtherServices';
+  };
+  attributes: {};
+}
+
 export interface SectionsProcessSection extends Struct.ComponentSchema {
   collectionName: 'components_sections_process_sections';
   info: {
@@ -156,6 +172,14 @@ export interface SectionsUrgencyBanner extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsVideoSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_video_sections';
+  info: {
+    displayName: 'VideoSection';
+  };
+  attributes: {};
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -165,12 +189,15 @@ declare module '@strapi/strapi' {
       'elements.checklist-item': ElementsChecklistItem;
       'elements.process-step': ElementsProcessStep;
       'sections.benefits-section': SectionsBenefitsSection;
+      'sections.faq-section': SectionsFaqSection;
       'sections.final-cta': SectionsFinalCta;
       'sections.hero-section': SectionsHeroSection;
       'sections.location-grid': SectionsLocationGrid;
+      'sections.other-services': SectionsOtherServices;
       'sections.process-section': SectionsProcessSection;
       'sections.team-grid': SectionsTeamGrid;
       'sections.urgency-banner': SectionsUrgencyBanner;
+      'sections.video-section': SectionsVideoSection;
     }
   }
 }
